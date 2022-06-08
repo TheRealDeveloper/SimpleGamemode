@@ -34,22 +34,26 @@ class Main extends PluginBase{
                     }else{
                         $sender->sendMessage($this->px. $this->c->get("unknown.gamemode"));
                     }
-                }else{
-                    if($args[0] == "0" or "1" or "2" or "3"){
-                        $target = $this->getServer()->getPlayerByPrefix($args[1]);
-                        if($target instanceof Player){
-                            $msgr = str_replace("{NAME}", $sender->getName(), $this->c->get("switch.message.other"));
-                            $msg = str_replace("{NEW}", $args[0], $msgr);
-                            $target->sendMessage($this->px. $msg);
-                            $target->setGamemode(GameMode::fromString($args[0]));
-                            $pmsgr = str_replace("{TARGET}", $target->getName(), $this->c->get("you.set.other"));
-                            $pmsg = str_replace("{NEW}", $args[0], $pmsgr);
-                            $sender->sendMessage($this->px. $pmsg);
-                        }else{
-                            $sender->sendMessage($this->px. $this->c->get("unknown.gamemode"));
+                }else {
+                    if ($sender->hasPermission("gamemode.command.others")) {
+                        if ($args[0] == "0" or "1" or "2" or "3") {
+                            $target = $this->getServer()->getPlayerByPrefix($args[1]);
+                            if ($target instanceof Player) {
+                                $msgr = str_replace("{NAME}", $sender->getName(), $this->c->get("switch.message.other"));
+                                $msg = str_replace("{NEW}", $args[0], $msgr);
+                                $target->sendMessage($this->px . $msg);
+                                $target->setGamemode(GameMode::fromString($args[0]));
+                                $pmsgr = str_replace("{TARGET}", $target->getName(), $this->c->get("you.set.other"));
+                                $pmsg = str_replace("{NEW}", $args[0], $pmsgr);
+                                $sender->sendMessage($this->px . $pmsg);
+                            } else {
+                                $sender->sendMessage($this->px . $this->c->get("unknown.gamemode"));
+                            }
+                        } else {
+                            $sender->sendMessage($this->c->get("unknown.gamemode"));
                         }
-                    } else{
-                        $sender->sendMessage($this->c->get("unknown.gamemode"));
+                    } else {
+                        $sender->sendMessage($this->px. $this->c->get("no.perms.others"));
                     }
                 }
             }
