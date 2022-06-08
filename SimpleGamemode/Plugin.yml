@@ -1,0 +1,17 @@
+name: SimpleGamemode
+main: trd\sgm\Main
+version: 1.0
+api: 4.0.0
+author: TheRealDeveloper
+
+commands:
+  gm:
+    description: Switch Gamemode
+    permission: gamemode.command.me
+    permission-message: "§cYou don't have the Permission to use: /gm"
+
+permissions:
+  gamemode.command.me:
+    default: op
+  gamemode.command.others:
+    default: op
