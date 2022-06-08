@@ -27,7 +27,7 @@ class Main extends PluginBase{
             //--SELF--//
             if(isset($args[0])){
                 if(!isset($args[1])){
-                    if($args[0] == "0" or "1" or "2" or "3"){
+                    if($args[0] == "0" || "1" || "2" || "3"){
                         $msg = str_replace("{NEW}", $args[0], $this->c->get("switch.gamemode"));
                         $sender->sendMessage($this->px . $msg);
                             $sender->setGamemode(GameMode::fromString($args[0]));
@@ -36,7 +36,7 @@ class Main extends PluginBase{
                     }
                 }else {
                     if ($sender->hasPermission("gamemode.command.others")) {
-                        if ($args[0] == "0" or "1" or "2" or "3") {
+                        if ($args[0] == "0" || "1" || "2" || "3") {
                             $target = $this->getServer()->getPlayerByPrefix($args[1]);
                             if ($target instanceof Player) {
                                 $msgr = str_replace("{NAME}", $sender->getName(), $this->c->get("switch.message.other"));
