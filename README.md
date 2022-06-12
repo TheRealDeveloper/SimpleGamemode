@@ -2,5 +2,5 @@
 
 | Default command | Parameter | Description | Default Permission |
 | :-----: | :-------: | :---------: | :-------: |
-| /gm | `<mode>`  | Switch own Gamemode | `gamemode.command.me` |
-| /gm | `<mode> <PlayerName>` | Switch others Gamemode | `gamemode.command.others` |
+| /gm | `<mode>`  | Switch own Gamemode | `sgm.command.self` |
+| /gm | `<mode> <PlayerName>` | Switch others Gamemode | `sgm.command.others` |
