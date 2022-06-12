@@ -1,0 +1,17 @@
+name: SimpleGamemode
+main: trd\sgm\Main
+version: 1.0
+api: 4.0.0
+author: TheRealDeveloper
+
+commands:
+  gm:
+    permission: sgm.command.self
+    permission-message: "§cYou dont have the Permission to use this Command"
+    description: Changes your Gamemode
+
+permissions:
+  sgm.command.self:
+    default: op
+  sgm.command.others:
+    default: op

@@ -1,0 +1,9 @@
+
+prefix: "§cYour Server: "
+
+select.gamemode: "§cPlease choose a Gamemode"
+unknown.player: "§cPlayer is not Online"
+target.msg.changed: "§6Your Gamemode was Changed by {SENDER}"
+sender.msg.changed.others: "§6You changed {TARGET}'s gamemode"
+no.perms.others: "§cYou dont have the Permission to use gm.others"
+changed.yourself: "§6You changed your Gamemode"
