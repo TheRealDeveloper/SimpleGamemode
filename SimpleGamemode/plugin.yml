@@ -11,7 +11,7 @@ commands:
     description: Changes your Gamemode
 
 permissions:
-  sgm.command.self:
+  simple.gamemode.self:
     default: op
-  sgm.command.others:
+  simple.gamemode.others:
     default: op
