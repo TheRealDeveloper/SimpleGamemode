@@ -31,7 +31,7 @@ class Main extends PluginBase{
                             $sender->sendMessage($this->p . $this->c->get("changed.yourself"));
                             $sender->setGamemode(GameMode::fromString($args[0]));
                         } else {
-                            if ($sender->hasPermission("sgm.command.others")) {
+                            if ($sender->hasPermission("simple.gamemode.others")) {
                                 $target = $this->getServer()->getPlayerByPrefix($args[1]);
                                 if ($target instanceof Player) {
                                     $msgt = str_replace("{SENDER}", $sender->getName(), $this->c->get("target.msg.changed"));
